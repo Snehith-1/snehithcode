@@ -1,0 +1,94 @@
+<h2>Angular: npm i ng-angular-popup</h2>
+<button style="background-color:rgb(29, 148, 29);color:white" (click)="showSuccess()">sucess</button>&nbsp;
+<button style="background-color:orange;color:white"  (click)="showWarn()">warning</button>&nbsp;
+<button style="background-color:red;color:white"  (click)="showError()">error</button>&nbsp;
+<button style="background-color:#87CEEB;color:white"  (click)="showInfo()">info</button>&nbsp;
+
+
+
+<button style="background-color:rgb(29, 148, 29);color:white" (click)="showSuccessTopCenter()">SuccessTopCenter</button>&nbsp;
+<button  style="background-color:red;color:white" (click)="showErrorBottonCenter()">ErrorBottonCenter</button>&nbsp;
+<button  style="background-color:#87CEEB;color:white"  (click)="showInfotopleft()">Infotopleft</button>&nbsp;
+<button style="background-color:orange;color:white"  (click)="showWarnbottomleft()">Warnbottomleft</button>&nbsp;
+
+<button  style="background-color:#87CEEB;color:white"  (click)="showInfotopRight()">InfotopRight</button>&nbsp;
+<button style="background-color:orange;color:white"  (click)="showWarnbottomRight()">WarnbottomRight</button>&nbsp;
+
+<br>
+<h2>Angular: npm i ngx-toastr</h2>
+
+
+<button style="background-color:rgb(29, 148, 29);color:white" (click)="toastrshowSuccess()">sucess</button>&nbsp;
+<button style="background-color:orange;color:white"  (click)="toastrshowWarn()">warning</button>&nbsp;
+<button style="background-color:red;color:white"  (click)="toastrshowError()">error</button>&nbsp;
+<button style="background-color:#87CEEB;color:white"  (click)="toastrshowInfo()">info</button>&nbsp;
+<ng-toast  [style]="{width:'300px'}"></ng-toast>
+
+
+<br><br><br><br>
+
+
+<span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
+    <button class="btn btn-primary" type="button" disabled>Disabled button</button>
+  </span>
+<div class="container p-5">
+
+  <h1>Four directions</h1><br>
+  <h4>Four options are available: top, right, bottom, and left aligned. Directions are mirrored when using Bootstrap in RTL</h4>
+  <button type="button" class="btn btn-secondary me-2" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+    Popover on top
+  </button>
+  <button type="button" class="btn btn-secondary me-2" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+    Popover on right
+  </button>
+  <button type="button" class="btn btn-secondary me-2" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+    Popover on bottom
+  </button>
+  <button type="button" class="btn btn-secondary me-2" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left"  data-bs-content="Left popover">
+    Popover on left
+  </button>
+  </div>
+ 
+
+  <button type="button" class="btn btn-secondary"
+        data-bs-toggle="popover" data-bs-placement="right"
+        data-bs-custom-class="custom-popover"
+        data-bs-title="Custom popover"
+        data-bs-content="This popover is themed via CSS variables.">
+  Custom popover
+</button>
+
+
+<br>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of data">
+    <tr >
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>
+        <button
+          class="btn btn-link"
+          (click)="toggleDetails(item)"
+        >
+          {{ item.showDetails ? 'Collapse' : 'Expand' }}
+        </button>
+      </td>
+    </tr>
+    <tr *ngIf="item.showDetails" (click)="toggleDetails(item)">
+      <td colspan="3">
+        <!-- Content to show when expanded -->
+        <div>
+          Details for {{ item.name }} go here.
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
